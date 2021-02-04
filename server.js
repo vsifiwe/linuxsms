@@ -33,7 +33,7 @@ const to = data.to;
 const text = data.message;
 
 // console.log(from + "....." + to + "..........." + text)
-nexmo.message.sendSms(from, to, text);
+//nexmo.message.sendSms(from, to, text);
 
 res.json({status: "Message sent"})
 });
