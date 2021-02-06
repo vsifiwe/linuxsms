@@ -24,7 +24,7 @@ router.post('/sms', function(req, res) {
     console.log(data)
 
 const nexmo = new Nexmo({
-    //apikey: 'ee1ce60d',
+    apikey: 'ee1ce60d',
     apiSecret: 'PJC8ilHdh60EgcTY'
     
     //apiKey: '2e586809',
@@ -42,7 +42,7 @@ res.json({status: "Message sent"})
 });
 
 
-router.post('/test1', function(req, res) {
+router.post('/testsms', function(req, res) {
     var data = req.body;
     console.log(data)
 
@@ -59,25 +59,6 @@ const text = data.message;
 nexmo.message.sendSms(from, to, text);
 
 res.json({status: "Message sent"})
-});
-
-router.post('/testsms', function(req, res) {
-    var data = req.body;
-    console.log(data)
-
-    const nexmo = new Nexmo({
-      apiKey: data.key,
-      apiSecret: data.secret,
-    });
-
-    const from = data.from;
-    const to = data.to;
-    const text = data.message;
-
-    // console.log(from + "....." + to + "..........." + text)
-    console.log(nexmo.message.sendSms(from, to, text));
-
-    res.json({status: "Message sent"})
 });
 
 app.use('/', router);
