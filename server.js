@@ -24,7 +24,7 @@ router.post('/sms', function(req, res) {
     console.log(data)
 
 const nexmo = new Nexmo({
-    apikey: 'ee1ce60d',
+    //apikey: 'ee1ce60d',
     apiSecret: 'PJC8ilHdh60EgcTY'
     
     //apiKey: '2e586809',
@@ -47,8 +47,8 @@ router.post('/test1', function(req, res) {
     console.log(data)
 
 const nexmo = new Nexmo({
-  apiKey: data.key,
-  apiSecret: data.secret,
+  apiKey: 'ee1ce60d',
+  apiSecret: 'PJC8ilHdh6OEgcTy',
 });
 
 const from = data.from;
