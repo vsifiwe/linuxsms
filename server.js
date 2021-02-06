@@ -42,7 +42,7 @@ res.json({status: "Message sent"})
 });
 
 
-router.post('/test', function(req, res) {
+router.post('/test1', function(req, res) {
     var data = req.body;
     console.log(data)
 
