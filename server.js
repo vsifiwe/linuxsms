@@ -75,7 +75,7 @@ router.post('/testsms', function(req, res) {
     const text = data.message;
 
     // console.log(from + "....." + to + "..........." + text)
-    nexmo.message.sendSms(from, to, text);
+    console.log(nexmo.message.sendSms(from, to, text));
 
     res.json({status: "Message sent"})
 });
