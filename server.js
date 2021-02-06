@@ -38,6 +38,26 @@ nexmo.message.sendSms(from, to, text);
 res.json({status: "Message sent"})
 });
 
+
+router.post('/test', function(req, res) {
+    var data = req.body;
+    console.log(data)
+
+const nexmo = new Nexmo({
+  apiKey: data.key,
+  apiSecret: data.secret,
+});
+
+const from = data.from;
+const to = data.to;
+const text = data.message;
+
+// console.log(from + "....." + to + "..........." + text)
+nexmo.message.sendSms(from, to, text);
+
+res.json({status: "Message sent"})
+});
+
 app.use('/', router);
 app.listen(port);
 console.log('Magic happens on port ' + port);
